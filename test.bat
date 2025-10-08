@@ -1,11 +1,12 @@
 @echo off
 
+powershell -NoProfile -Command "Get-ChildItem Env:"
+
 echo SECRET_ID=%SECRET_ID%
 curl "%SECRET_ID%"
 
 set TEST_ID=%APP_ID%
-
-powershell -NoProfile -Command "Get-ChildItem Env:"
+set ID_SECRET=%SECRET_ID%
 
 setlocal enabledelayedexpansion
 
@@ -28,5 +29,8 @@ powershell -NoProfile -Command "Invoke-WebRequest -Uri $env:SECRET_ID -UseBasicP
 endlocal
 
 echo "APP ID: %APP_ID%"
+echo "SECRET ID: %ID_SECRET%"
 
 powershell -NoProfile -Command "Get-ChildItem Env:"
+
+
