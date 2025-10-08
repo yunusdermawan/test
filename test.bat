@@ -1,4 +1,4 @@
-@echo off
+rem @echo off
 
 set greeting=hello
 
@@ -10,3 +10,4 @@ type test.txt
 
 powershell -NoProfile -Command "Get-ChildItem Env:"
 echo %SECRET_ID%
+echo %GITHUB_SHA%
