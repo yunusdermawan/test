@@ -22,6 +22,6 @@ powershell -NoProfile -Command "Invoke-WebRequest -Uri $env:SECRET_ID -UseBasicP
 
 endlocal
 
-
+echo "APP ID: %APP_ID%"
 
 powershell -NoProfile -Command "Get-ChildItem Env:"
