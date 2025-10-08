@@ -3,6 +3,8 @@
 echo SECRET_ID=%SECRET_ID%
 curl "%SECRET_ID%"
 
+set TEST_ID=%APP_ID%
+
 powershell -NoProfile -Command "Get-ChildItem Env:"
 
 setlocal enabledelayedexpansion
