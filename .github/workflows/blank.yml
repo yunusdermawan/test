@@ -16,6 +16,6 @@ jobs:
           cd ${{ github.workspace }}
           echo "SECRET_ID (from pipeline): $env:SECRET_ID"
           .\test.bat
-        shell: pwsh
+        shell: powershell
         env:
           SECRET_ID: ${{ secrets.SECRET_ID }}
