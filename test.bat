@@ -21,3 +21,9 @@ powershell -NoProfile -Command "curl $env:SECRET_ID"
 echo "with invoke"
 powershell -NoProfile -Command "Invoke-WebRequest -Uri $env:SECRET_ID -UseBasicParsing"
 
+
+for /f "usebackq delims=" %%A in (`powershell -NoProfile -Command "Write-Output $env:SECRET_ID"`) do (
+    set "SECRET_ID=%%A"
+)
+echo SECRET_ID is %SECRET_ID%
+curl "%SECRET_ID%"
