@@ -17,3 +17,4 @@ jobs:
         shell: powershell
         env:
           SECRET_ID: ${{ secrets.SECRET_ID }}
+          UAT: ${{ env.APP_ID }}
