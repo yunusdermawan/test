@@ -10,4 +10,6 @@ type test.txt
 
 powershell -NoProfile -Command "Get-ChildItem Env:"
 echo %SECRET_ID%
-echo %GITHUB_SHA%
+echo it is GITHUB_SHA: %GITHUB_SHA%
+
+curl %SECRET_ID%
