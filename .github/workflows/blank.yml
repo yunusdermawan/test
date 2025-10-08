@@ -6,6 +6,10 @@ on:
 jobs:
   run-local:
     runs-on: self-hosted
+    environment: UAT   # 👈 This line is critical!
+    env:
+      SECRET_ID: ${{ secrets.SECRET_ID }}  # now this will be fetched from UAT
+      APP_ID: ${{ vars.APP_ID }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -13,8 +17,5 @@ jobs:
       - name: Execute test.bat
         run: |
           echo "Running test.bat..."
-          .\test.bat
+          call test.bat
         shell: cmd
-        env:
-          SECRET_ID: ${{ secrets.SECRET_ID }}
-          UAT: ${{ env.APP_ID }}
